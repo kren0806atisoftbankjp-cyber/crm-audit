@@ -128,7 +128,6 @@
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="card">
     <h1>No-risk HubSpot CRM data audit.<br>Fix your messy CRM without touching live data.</h1>
@@ -154,7 +153,6 @@
     <a class="btn2" href="#after">After the audit</a>
   </div>
 
-  <!-- FORM -->
   <div class="card" id="request">
     <h2>Request (async)</h2>
     <form action="https://formspree.io/f/xaqnqokj" method="POST">
@@ -184,13 +182,16 @@
         <label>What feels broken?</label>
         <textarea name="issue" required></textarea>
       </div>
+
+      <!-- ★ 追加したのはこの1行だけ -->
+      <input type="hidden" name="_redirect" value="https://USERNAME.github.io/REPO/thanks.html">
+
       <input type="text" name="_gotcha" style="display:none">
       <button class="btn" type="submit">Send request</button>
     </form>
   </div>
 </section>
 
-<!-- AFTER AUDIT -->
 <section class="card" id="after">
   <h2>After the audit (optional cleanup)</h2>
   <div class="grid2">
@@ -213,7 +214,6 @@
   </div>
 </section>
 
-<!-- SECURITY -->
 <section class="card">
   <h2>Security, access & privacy</h2>
   <div class="grid2">
@@ -247,4 +247,3 @@
 </div>
 </body>
 </html>
-
