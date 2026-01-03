@@ -155,7 +155,7 @@
 
   <div class="card" id="request">
     <h2>Request (async)</h2>
-    <form action="https://formspree.io/f/mjgkorpd" method="POST">
+    <form id="auditForm" action="https://formspree.io/f/mjgkorpd" method="POST">
       <div>
         <label>Name</label>
         <input name="name" required>
@@ -245,8 +245,40 @@
 </footer>
 
 </div>
+<script>
+(function () {
+  const form = document.getElementById("auditForm");
+  if (!form) return;
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        window.location.href =
+          "https://kren0806atisoftbankjp-cyber.github.io/crm-audit/thanks.html";
+      } else {
+        alert("Submission failed. Please try again.");
+      }
+    } catch (err) {
+      alert("Network error. Please try again.");
+    }
+  });
+})();
+</script>
 </body>
 </html>
+
 
 
 
